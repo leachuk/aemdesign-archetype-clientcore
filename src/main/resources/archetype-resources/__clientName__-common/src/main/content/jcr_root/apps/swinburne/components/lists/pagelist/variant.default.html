@@ -1,0 +1,19 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<template data-sly-template.variant="${symbol_dollar}{@ componentProperties, component}">
+    <div style="${symbol_dollar}{componentProperties.attr.data.style @ context = 'unsafe'}"
+         data-sly-attribute="${symbol_dollar}{componentProperties.attr.data @ context = 'unsafe'}"
+         data-sly-unwrap="${symbol_dollar}{!componentProperties.printStructure}"
+         data-layer-label="${symbol_dollar}{componentProperties.analyticsLabel ? componentProperties.analyticsLabel : componentProperties.componentId }">
+
+        <sly data-sly-use.feed="list.feed.html" data-sly-call="${symbol_dollar}{feed.variant @ componentProperties=componentProperties}"></sly>
+        <div class="content" data-sly-unwrap="${symbol_dollar}{!componentProperties.printStructure}">
+            <sly data-sly-use.body="list.body.html"
+                 data-sly-call="${symbol_dollar}{body.variant @ componentProperties=component.componentProperties, component=component}"></sly>
+        </div>
+
+        <sly data-sly-use.pagination="${symbol_dollar}{componentProperties.paginationTemplate}" data-sly-call="${symbol_dollar}{pagination.variant @ componentProperties=componentProperties}"></sly>
+
+    </div>
+</template>

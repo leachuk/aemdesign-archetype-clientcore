@@ -1,0 +1,14 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+To: ${symbol_dollar}{wfinitiatorEmail}
+Subject: Page Unpublished: ${symbol_dollar}{payloadPath}
+
+====================================================================================================
+Workflow : ${symbol_dollar}{wfModelTitle}
+Request Unpublished By : ${symbol_dollar}{wfPreviousStepUser}
+====================================================================================================
+
+The following website content has been unpublished: ${symbol_dollar}{authorPath}${symbol_dollar}{payloadOpenURL}
+
+This is an automatically generated message. Please do not reply.

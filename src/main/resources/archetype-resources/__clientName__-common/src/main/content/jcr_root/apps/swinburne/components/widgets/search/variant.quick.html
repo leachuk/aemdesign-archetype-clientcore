@@ -1,0 +1,15 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<template data-sly-template.variant="${symbol_dollar}{@ componentProperties}">
+    <div style="${symbol_dollar}{componentProperties.attr.data.style @ context = 'unsafe'}"
+         data-sly-attribute="${symbol_dollar}{componentProperties.attr.data @ context = 'unsafe'}">
+        <form name="search" action="${symbol_dollar}{componentProperties.formAction @ context = 'unsafe'}" method="${symbol_dollar}{componentProperties.formMethod}">
+            <input type="search" name="${symbol_dollar}{componentProperties.formParameterName}" placeholder="${symbol_dollar}{componentProperties.placeholderText}">
+
+            <button type="submit">
+                <i class="icon fal fa-search"></i>
+            </button>
+        </form>
+    </div>
+</template>

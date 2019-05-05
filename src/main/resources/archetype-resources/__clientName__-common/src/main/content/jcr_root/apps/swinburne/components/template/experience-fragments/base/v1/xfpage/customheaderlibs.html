@@ -1,0 +1,66 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+
+<sly data-sly-test="${symbol_dollar}{(wcmmode.edit || wcmmode.preview)}">
+    
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <!-- custom header libs -->
+
+    <!-- all: aemdesign.header.js start -->
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+         data-sly-call="${symbol_dollar}{clientlib.js @ categories='aemdesign.header'}"/>
+    <!-- all: aemdesign.header.js end -->
+    
+    <!-- all: swinburne.common.head.dependencies start -->
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+         data-sly-call="${symbol_dollar}{clientlib.all @ categories='swinburne.common.head.dependencies'}"/>
+    <!-- all: swinburne.common.head.dependencies end -->
+    
+    <!-- all: aemdesign.common.head.js -->
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+         data-sly-call="${symbol_dollar}{clientlib.js @ categories='aemdesign.common.head'}"/>
+    
+    <!-- css: aemdesign.common.components -->
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+         data-sly-call="${symbol_dollar}{clientlib.css @ categories='aemdesign.common.components'}"/>
+    
+    <!-- css: aemdesign.author -->
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+         data-sly-test="${symbol_dollar}{!wcmmode.disabled}"
+         data-sly-call="${symbol_dollar}{clientlib.css @ categories='aemdesign.author'}"/>
+    <!-- all: aemdesign.common.components.author -->
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+         data-sly-test="${symbol_dollar}{!wcmmode.disabled}"
+         data-sly-call="${symbol_dollar}{clientlib.all @ categories='aemdesign.common.components.author'}"/>
+    
+    
+    <!-- css: aemdesign.publish -->
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+         data-sly-test="${symbol_dollar}{wcmmode.disabled}"
+         data-sly-call="${symbol_dollar}{clientlib.css @ categories='aemdesign.publish'}"/>
+    <!-- all: aemdesign.common.components.publish -->
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+         data-sly-test="${symbol_dollar}{wcmmode.disabled}"
+         data-sly-call="${symbol_dollar}{clientlib.all @ categories='aemdesign.common.components.publish'}"/>
+    
+    
+    <!-- css: aemdesign.common.coralui -->
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+         data-sly-test="${symbol_dollar}{wcmmode.preview || wcmmode.edit}"
+         data-sly-call="${symbol_dollar}{clientlib.css @ categories='aemdesign.common.coralui'}"/>
+    
+    <!-- aemdesign/components/analytics/datalayer -->
+    <sly data-sly-resource="${symbol_dollar}{ @ resourceType='swinburne/components/analytics/datalayer'}"/>
+    
+    <!-- contexthub start -->
+    <sly data-sly-resource="${symbol_dollar}{'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>
+    <!-- contexthub end -->
+    
+    
+
+</sly>

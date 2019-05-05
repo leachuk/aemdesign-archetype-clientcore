@@ -1,0 +1,14 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<sly data-sly-use.body="body.js" data-sly-use.templatedContainer="com.day.cq.wcm.foundation.TemplatedContainer"/>
+<sly data-sly-test="${symbol_dollar}{!templatedContainer.hasStructureSupport}"
+     data-sly-resource="${symbol_dollar}{body.resourcePath @ resourceType='wcm/foundation/components/parsys'}"/>
+<div class="container">
+    <sly data-sly-test="${symbol_dollar}{templatedContainer.hasStructureSupport}"
+         data-sly-repeat.child="${symbol_dollar}{templatedContainer.structureResources}"
+         data-sly-resource="${symbol_dollar}{child.path @ resourceType=child.resourceType, decorationTagName='div'}"/>
+</div>
+<div data-sly-resource="${symbol_dollar}{'cloudservices' @ resourceType='cq/cloudserviceconfigs/components/servicecomponents'}"
+     data-sly-unwrap></div>
+<sly data-sly-include="footerlibs.html"/>

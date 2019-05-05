@@ -1,0 +1,36 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<template data-sly-template.variant="${symbol_dollar}{@ componentProperties}">
+    <div class="card ${symbol_dollar}{componentProperties.cardSize} ${symbol_dollar}{componentProperties.badgeClassAttr}">
+        <div class="card-img-top">
+            <img src="${symbol_dollar}{componentProperties.pageThumbnail}"
+                 data-sly-attribute="${symbol_dollar}{componentProperties.badgeImageAttr @ context = 'unsafe'}"
+                 alt="${symbol_dollar}{componentProperties.title}">
+        </div>
+
+        <div class="card-body">
+            <div class="card-taglist card-taglist--basic" data-sly-test="${symbol_dollar}{componentProperties.category}">
+                <ul>
+                    <sly data-sly-list.tag="${symbol_dollar}{componentProperties.category}" data-sly-unwrap>
+                        <sly data-sly-test="${symbol_dollar}{componentProperties.category[tag]}">
+                            <li id="${symbol_dollar}{componentProperties.category[tag].value}">${symbol_dollar}{componentProperties.category[tag].title}</li>
+                        </sly>
+                    </sly>
+                </ul>
+            </div>
+
+            <title class="card-title"
+                   data-sly-element="${symbol_dollar}{componentProperties.badgeTitleType}">${symbol_dollar}{componentProperties.pageNavTitle}</title>
+
+            <div class="card-action">
+                <a class="card-link ${symbol_dollar}{componentProperties.badgeLinkStyle @ join=' '}"
+                   href="${symbol_dollar}{componentProperties.pageUrl}"
+                   target="${symbol_dollar}{componentProperties.badgeLinkTarget}"
+                   title="${symbol_dollar}{componentProperties.badgeLinkTitle}"
+                   data-sly-attribute="${symbol_dollar}{componentProperties.badgeLinkAttr @ context = 'unsafe'}">
+                    <span>${symbol_dollar}{componentProperties.badgeLinkText}</span></a>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,11 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<template data-sly-template.variant="${symbol_dollar}{@ componentProperties}">
+    <ul style="${symbol_dollar}{componentProperties.attr.data.style @ context = 'unsafe'}"
+        data-sly-attribute="${symbol_dollar}{componentProperties.attr.data @ context = 'unsafe'}"
+        data-sly-list.link="${symbol_dollar}{componentProperties.menuItems}">
+        <sly data-sly-use.menuitem="${symbol_dollar}{'./menuitem.dropdown.html'}"
+             data-sly-call="${symbol_dollar}{menuitem.variant @ componentProperties=componentProperties, menuitem=link, isTopLevel=true}"></sly>
+    </ul>
+</template>

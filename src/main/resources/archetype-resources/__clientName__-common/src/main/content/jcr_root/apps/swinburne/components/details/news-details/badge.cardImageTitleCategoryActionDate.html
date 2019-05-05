@@ -1,0 +1,37 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<template data-sly-template.variant="${symbol_dollar}{@ componentProperties}">
+    <div class="card card--taglist-share ${symbol_dollar}{componentProperties.cardSize} ${symbol_dollar}{componentProperties.badgeClassAttr}">
+        <div class="card-img-top">
+            <img src="${symbol_dollar}{componentProperties.pageThumbnail}"
+                 data-sly-attribute="${symbol_dollar}{componentProperties.badgeImageAttr @ context = 'unsafe'}"
+                 alt="${symbol_dollar}{componentProperties.title}">
+        </div>
+        <div class="card-body">
+            <title class="card-title"
+                   data-sly-element="${symbol_dollar}{componentProperties.badgeTitleType}">${symbol_dollar}{componentProperties.badgeTitle}</title>
+            <div class="card-taglist"
+                 data-sly-test="${symbol_dollar}{componentProperties.category}">
+                <ul class="taglist">
+                    <sly data-sly-list.tag="${symbol_dollar}{componentProperties.category}" data-sly-unwrap>
+                        <sly data-sly-test="${symbol_dollar}{componentProperties.category[tag]}">
+                            <li class="taglist__item" id="${symbol_dollar}{componentProperties.category[tag].value}">${symbol_pound}${symbol_dollar}{componentProperties.category[tag].title}</li>
+                        </sly>
+                    </sly>
+                </ul>
+            </div>
+            <div class="card-action">
+                <a class="card-link ${symbol_dollar}{componentProperties.badgeLinkStyle @ join=' '}"
+                   href="${symbol_dollar}{componentProperties.pageUrl}"
+                   target="${symbol_dollar}{componentProperties.badgeLinkTarget}"
+                   title="${symbol_dollar}{componentProperties.badgeLinkTitle}"
+                   data-sly-attribute="${symbol_dollar}{componentProperties.badgeLinkAttr @ context = 'unsafe'}">
+                    <span>${symbol_dollar}{componentProperties.badgeLinkText}</span></a>
+            </div>
+            <div class="card-date" data-sly-test="${symbol_dollar}{componentProperties.newsDateStatusText}">
+                ${symbol_dollar}{componentProperties.newsDateStatusText @ context='unsafe'}
+            </div>
+        </div>
+    </div>
+</template>

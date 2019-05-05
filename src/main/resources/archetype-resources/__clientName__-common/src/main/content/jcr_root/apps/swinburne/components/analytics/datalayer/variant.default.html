@@ -1,0 +1,45 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<template data-sly-template.variant="${symbol_dollar}{@ componentProperties}">
+    <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+         data-sly-call="${symbol_dollar}{clientlib.all @ categories=['aemdesign.components.datalayer']}"></sly>
+
+  ${symbol_dollar}{'<script type="text/javascript" id="datalayer">' @ context = "unsafe"}
+        window.digitalData = {
+            "page": {
+                "pageInfo": {
+                    "abort": "${symbol_dollar}{componentProperties.abort @ context='text'}",
+                    "contentCountry": "${symbol_dollar}{componentProperties.contentCountry @ context='text'}",
+                    "contentLanguage": "${symbol_dollar}{componentProperties.contentLanguage @ context='text'}",
+                    "pageName": "${symbol_dollar}{componentProperties.pageName @ context='text'}",
+                    "pageType": "${symbol_dollar}{componentProperties.pageType @ context='text'}",
+                    "pagePath": "${symbol_dollar}{componentProperties.pagePath @ context='text'}",
+                    "effectiveDate": "${symbol_dollar}{componentProperties.effectiveDate @ context='text'}",
+                    "platform": "${symbol_dollar}{componentProperties.platform @ context='text'}"
+                }
+            },
+            "form": {
+                "name": "",
+                "stepName": "",
+                "fieldName": "",
+                "referenceId": "",
+                "status": ""
+            },
+            "event": [{
+                "eventAction": "",
+                "timeStamp": ""
+            }],
+            "error": [{
+                "code": "",
+                "message": ""
+            }],
+        };
+        window.digitalData.page.pageInfo.referringURL = AEMDESIGN.analytics.getReferringUrl();
+        window.digitalData.page.pageInfo.destinationUrl = AEMDESIGN.analytics.getDestinationUrl();
+        ${symbol_dollar}(document).ready(function(){
+            window.digitalData.page.pageInfo.sections = AEMDESIGN.analytics.getSections();
+        });
+        window.digitalData.page.pageInfo.breakPoint = AEMDESIGN.analytics.getBreakpoint()["label"];
+      ${symbol_dollar}{'</script>' @ context = "unsafe"}
+</template>

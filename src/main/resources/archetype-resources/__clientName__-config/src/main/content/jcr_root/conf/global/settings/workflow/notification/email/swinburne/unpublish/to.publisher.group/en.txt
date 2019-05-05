@@ -1,0 +1,18 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+Subject: Ready to Unpublish: ${symbol_dollar}{payloadPath}
+
+====================================================================================================
+Workflow : ${symbol_dollar}{wfModelTitle}
+Start Time : ${symbol_dollar}{wfStartTime}
+Request Submitted By : ${symbol_dollar}{wfinitiatorName}
+Request Reviewed By : ${symbol_dollar}{wfPreviousStepUser}
+====================================================================================================
+
+The following website content has been approved and ready to be unpublished: ${symbol_dollar}{authorPath}${symbol_dollar}{payloadOpenURL}
+
+Reviewer message:
+${symbol_dollar}{wfPreviousStepComment}
+
+This is an automatically generated message. Please do not reply.

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd" name="swinburne-core"
+    xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <requiredProperties>
+    <requiredProperty key="clientName"/>
+  </requiredProperties>
+  <fileSets>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>__clientName__-core-services</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>__clientName__-server-config</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>__clientName__-core-services/src</directory>
+      <includes>
+        <include>**/*.java</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>__clientName__-core-services</directory>
+      <includes>
+        <include>**/*.</include>
+        <include>**/*.md</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>__clientName__-server-config</directory>
+      <includes>
+        <include>**/*.md</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>__clientName__-server-config/src</directory>
+      <includes>
+        <include>**/*.</include>
+        <include>**/*.old</include>
+        <include>**/*.conf</include>
+        <include>**/*.any</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>scripts</directory>
+      <includes>
+        <include>**/*.sh</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>deploy</include>
+        <include>pull</include>
+        <include>deploy-publish</include>
+        <include>deploy-publish-local</include>
+        <include>.editorconfig</include>
+        <include>README.md</include>
+        <include>.gitignore</include>
+        <include>.gitattributes</include>
+        <include>stats</include>
+        <include>package</include>
+        <include>deploy-local</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+  <modules>
+    <module id="${clientName}-common" dir="__clientName__-common" name="${clientName}-common">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/content</directory>
+          <includes>
+            <include>**/*.txt</include>
+            <include>**/*.xml</include>
+            <include>**/*.jsp</include>
+            <include>**/*.html</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/main/content</directory>
+          <includes>
+            <include>**/*.psd</include>
+            <include>**/*.cnd</include>
+            <include>**/*.png</include>
+            <include>**/*.vltignore</include>
+            <include>**/*.json</include>
+            <include>**/*.js</include>
+            <include>**/*.ecma</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>deploy</include>
+            <include>README.md</include>
+            <include>deploy-local</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+    <module id="${clientName}-config" dir="__clientName__-config" name="${clientName}-config">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/content</directory>
+          <includes>
+            <include>**/*.txt</include>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/main/content</directory>
+          <includes>
+            <include>**/*.psd</include>
+            <include>**/*.cnd</include>
+            <include>**/*.png</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>deploy</include>
+            <include>README.md</include>
+            <include>deploy-local</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+    <module id="${clientName}-showcase" dir="__clientName__-showcase" name="${clientName}-showcase">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/content</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/main/content</directory>
+          <includes>
+            <include>**/*.psd</include>
+            <include>**/*.</include>
+            <include>**/*.mp4</include>
+            <include>**/*.flv</include>
+            <include>**/*.cnd</include>
+            <include>**/*.png</include>
+            <include>**/*.m4v</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>deploy</include>
+            <include>README.md</include>
+            <include>watch</include>
+            <include>deploy-local</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+    <module id="${clientName}-deploy" dir="__clientName__-deploy" name="${clientName}-deploy">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/content</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/content</directory>
+          <includes>
+            <include>**/*.psd</include>
+            <include>**/*.zip</include>
+            <include>**/*.cnd</include>
+            <include>**/*.png</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>deploy</include>
+            <include>deploy-local</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+    <module id="${clientName}-testing" dir="__clientName__-testing" name="${clientName}-testing">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/test/groovy</directory>
+          <includes>
+            <include>**/*.groovy</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/test/resources</directory>
+          <includes>
+            <include>**/*.groovy</include>
+            <include>**/*.properties</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/test/resources</directory>
+          <includes>
+            <include>**/*.ad</include>
+            <include>**/*.md</include>
+            <include>**/*.dmg</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>drivers</directory>
+          <includes>
+            <include>**/*.</include>
+            <include>**/*.version</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>drivers/operadriver-mac-64bit</directory>
+          <includes>
+            <include>**/*.</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>openReport.groovy</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>seleniumhub-stop</include>
+            <include>test-spec-seleniumhub</include>
+            <include>install-drivers</include>
+            <include>test-spec-seleniumhub-local</include>
+            <include>test-spec-local</include>
+            <include>README.md</include>
+            <include>test-spec</include>
+            <include>.gitignore</include>
+            <include>seleniumhub-start</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+  </modules>
+</archetype-descriptor>

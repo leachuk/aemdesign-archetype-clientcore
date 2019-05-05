@@ -1,0 +1,8 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<template data-sly-template.variant="${symbol_dollar}{@ componentProperties}">
+    <article data-sly-attribute="${symbol_dollar}{componentProperties.attr.data @ context = 'unsafe'}">
+        <sly data-sly-resource="${symbol_dollar}{'./par' @ resourceType='swinburne/components/layout/container', decorationTagName='div'}"></sly>
+    </article>
+</template>

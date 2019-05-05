@@ -1,0 +1,12 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+Subject: Workflow-Mail
+To: ${symbol_dollar}{createdByEmail}
+To: ${symbol_dollar}{lastModifiedByEmail}
+
+Hello ${symbol_dollar}{createdByName},
+
+This is default mail generated.
+
+Please contact your admin related to this mail.

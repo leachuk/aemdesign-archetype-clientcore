@@ -1,0 +1,46 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<template data-sly-template.variant="${symbol_dollar}{@ componentProperties, menuItem, isTopLevel, menuItemId}">
+    <sly data-sly-test="${symbol_dollar}{!menuItemId}">
+        <sly data-sly-set.menuId="${symbol_dollar}{'{0}_{1}' @ format=[componentProperties.componentId,menuItem.name]}"></sly>
+    </sly>
+    <sly data-sly-test="${symbol_dollar}{menuItemId}">
+        <sly data-sly-set.menuId="${symbol_dollar}{'{0}_{1}' @ format=[menuItemId,menuItem.name]}"></sly>
+    </sly>
+    <sly data-sly-test="${symbol_dollar}{menuItem.depth}">
+        <sly data-sly-set.levelClass="${symbol_dollar}{' l-{0}' @ format=[menuItem.depth]}"></sly>
+    </sly>
+    <sly data-sly-test="${symbol_dollar}{isTopLevel}">
+        <sly data-sly-set.dropdownClass=" dropdown"></sly>
+    </sly>
+    <sly data-sly-test="${symbol_dollar}{!isTopLevel}">
+        <sly data-sly-set.dropdownClass=" dropdown-submenu"></sly>
+    </sly>
+    <item class="nav-item${symbol_dollar}{menuItem.current ? ' active' : ''}${symbol_dollar}{menuItem.children ? dropdownClass : ''}${symbol_dollar}{levelClass}"
+          data-sly-element="${symbol_dollar}{isTopLevel ? 'li' : 'div'}">
+        <!--/*no children print link only*/-->
+        <a data-sly-test="${symbol_dollar}{!menuItem.children}"
+           class="nav-link${symbol_dollar}{menuItem.current ? ' active' : ''}${symbol_dollar}{levelClass}" href="${symbol_dollar}{menuItem.href}"
+           title="${symbol_dollar}{'{0}{1}{2}' @ format=[componentProperties.linkTitlePrefix,componentProperties.linkTitlePrefix? ' ' : '' ,menuItem.title]}">${symbol_dollar}{menuItem.pageNavTitle}<span data-sly-test="${symbol_dollar}{menuItem.current}" class="sr-only">(current)</span></a>
+        <!--/*yes children print menu toggle*/-->
+        <a data-sly-test="${symbol_dollar}{menuItem.children}"
+           class="nav-link dropdown-toggle${symbol_dollar}{menuItem.current ? ' active' : ''}${symbol_dollar}{levelClass}" id="${symbol_dollar}{menuId}" href="${symbol_pound}"
+           role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+           title="${symbol_dollar}{'{0} {1}' @ format=[componentProperties.linkTitlePrefix,menuItem.title]}">${symbol_dollar}{menuItem.pageNavTitle}<span data-sly-test="${symbol_dollar}{menuItem.current}" class="sr-only">(current)</span></a>
+        <!--/*if has children print menu*/-->
+        <div data-sly-test="${symbol_dollar}{menuItem.children}"
+            class="dropdown-menu${symbol_dollar}{menuItem.current ? ' active' : ''}"
+            aria-labelledby="${symbol_dollar}{menuId}" x-placement="bottom-start">
+            <div class="meta">
+                <h4 class="title">${symbol_dollar}{menuItem.pageNavTitle}</h4>
+                <p class="description" data-sly-test="${symbol_dollar}{menuItem.description}">${symbol_dollar}{menuItem.description}</p>
+            </div>
+            <!--/*if has children print children*/-->
+            <sly data-sly-list.childItem="${symbol_dollar}{menuItem.children}">
+                <sly data-sly-use.render="${symbol_dollar}{'./menuitem.dropdown.html'}"
+                     data-sly-call="${symbol_dollar}{render.variant @ componentProperties=componentProperties, menuitem=childItem, isTopLevel=false, menuItemId=menuId}"></sly>
+            </sly>
+        </div>
+    </item>
+</template>

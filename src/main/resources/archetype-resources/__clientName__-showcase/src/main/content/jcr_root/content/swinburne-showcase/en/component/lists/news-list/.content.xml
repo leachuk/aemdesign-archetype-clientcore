@@ -1,0 +1,71 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2019-01-30T14:09:05.515+11:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/swinburne/settings/wcm/templates/onecolumn-v2"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="News List"
+        sling:resourceType="swinburne/components/template/column/one/v2">
+        <header
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="swinburne/components/layout/header"
+            componentId="header_ZDAG2JDUB">
+            <par
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="swinburne/components/layout/container"/>
+        </header>
+        <article
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="swinburne/components/layout/article"
+            componentId="article_EZV6S2TSO">
+            <par
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="swinburne/components/layout/container">
+                <contentblock
+                    jcr:created="{Date}2019-01-30T14:07:42.415+11:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2019-01-30T14:07:42.415+11:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="swinburne/components/layout/contentblock"
+                    componentId="contentblock_WIKVN9OBL">
+                    <par
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemdesign/components/layout/container">
+                        <newslist
+                            jcr:created="{Date}2019-01-30T14:07:55.830+11:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2019-01-30T14:09:05.511+11:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="swinburne/components/lists/newslist"
+                            componentId="newslist_RGZ6WGQKB"
+                            detailsBadge="cardImageTitleCategoryActionDate"
+                            listFrom="static"
+                            pages="[/content/swinburne-showcase/en/component/details/news-details,/content/swinburne-showcase/en/component/details/news-details,/content/swinburne-showcase/en/component/details/news-details]"
+                            tagsMatch="any">
+                            <badgeThumbnail
+                                jcr:lastModified="{Date}2019-01-30T14:09:05.511+11:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="aemdesign/components/media/image"/>
+                        </newslist>
+                    </par>
+                </contentblock>
+            </par>
+        </article>
+        <footer
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="swinburne/components/layout/footer"
+            componentId="footer_JXAP6AJH5">
+            <par
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="swinburne/components/layout/container"/>
+        </footer>
+    </jcr:content>
+</jcr:root>

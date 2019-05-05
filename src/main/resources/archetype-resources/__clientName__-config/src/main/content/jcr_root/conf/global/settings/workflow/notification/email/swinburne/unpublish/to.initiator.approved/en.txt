@@ -1,0 +1,17 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+To: ${symbol_dollar}{wfinitiatorEmail}
+Subject: Page Approved - Unpublish: ${symbol_dollar}{payloadPath}
+
+====================================================================================================
+Workflow : ${symbol_dollar}{wfModelTitle}
+Request Approved By : ${symbol_dollar}{wfPreviousStepUser}
+====================================================================================================
+
+The following website content has been approved to be unpublished: ${symbol_dollar}{authorPath}${symbol_dollar}{payloadOpenURL}
+
+Approver message:
+${symbol_dollar}{wfPreviousStepComment}
+
+This is an automatically generated message. Please do not reply.

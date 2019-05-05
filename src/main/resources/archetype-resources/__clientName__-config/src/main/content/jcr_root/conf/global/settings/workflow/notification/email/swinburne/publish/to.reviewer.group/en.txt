@@ -1,0 +1,18 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+Subject: Ready to Review - Publish: ${symbol_dollar}{payloadPath}
+
+====================================================================================================
+Workflow : ${symbol_dollar}{wfModelTitle}
+Start Time : ${symbol_dollar}{wfStartTime}
+Request Submitted By : ${symbol_dollar}{wfinitiatorName}
+====================================================================================================
+
+Please review and approve the following item(s) to be published: ${symbol_dollar}{authorPath}${symbol_dollar}{payloadOpenURL}
+
+Why have I received this?
+
+You have received this notification because you are assigned as a Reveiwer of this item of content.
+
+This is an automatically generated message. Please do not reply.

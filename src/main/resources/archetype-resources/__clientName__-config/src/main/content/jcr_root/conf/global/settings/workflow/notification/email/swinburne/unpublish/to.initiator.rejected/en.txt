@@ -1,0 +1,19 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+To: ${symbol_dollar}{wfinitiatorEmail}
+Subject: Rejected Content Review - Unpublish: ${symbol_dollar}{payloadPath}
+
+====================================================================================================
+Workflow : ${symbol_dollar}{wfModelTitle}
+Request Rejected By : ${symbol_dollar}{wfPreviousStepUser}
+====================================================================================================
+
+The following website content review has not been approved to be unpublished: ${symbol_dollar}{authorPath}${symbol_dollar}{payloadOpenURL}
+
+Reviewer message:
+${symbol_dollar}{wfPreviousStepComment}
+
+Please edit content and resubmit for approval.
+
+This is an automatically generated message. Please do not reply.
