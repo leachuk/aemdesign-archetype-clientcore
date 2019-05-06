@@ -11,11 +11,9 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-
     <!-- ====================================================================== -->
     <!-- P R O J E C T D E S C R I P T I O N -->
     <!-- ====================================================================== -->
-
     <groupId>${groupId}</groupId>
     <artifactId>${artifactId}</artifactId>
     <packaging>content-package</packaging>
