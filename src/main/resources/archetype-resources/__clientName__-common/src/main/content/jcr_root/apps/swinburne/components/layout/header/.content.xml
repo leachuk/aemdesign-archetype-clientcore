@@ -7,5 +7,5 @@
     jcr:primaryType="cq:Component"
     jcr:title="Header"
     cq:icon="mBox"
-          componentGroup="Swinburne - Layout"
-          sling:resourceSuperType="aemdesign/components/layout/header"/>
+	componentGroup="Swinburne - Layout"
+	sling:resourceSuperType="aemdesign/components/layout/header"/>

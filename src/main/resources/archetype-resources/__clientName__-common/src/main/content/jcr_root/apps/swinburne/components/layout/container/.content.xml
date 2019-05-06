@@ -10,5 +10,4 @@
     cq:icon="code"
     sling:resourceSuperType="wcm/foundation/components/responsivegrid"
     componentGroup=".hidden">
-
 </jcr:root>

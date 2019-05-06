@@ -7,5 +7,5 @@
     jcr:title="Link"
     cq:icon="link"
     allowedParents="[*/parsys]"
-          componentGroup="Swinburne - Content"
-          sling:resourceSuperType="aemdesign/components/content/link"/>
+	componentGroup="Swinburne - Content"
+	sling:resourceSuperType="aemdesign/components/content/link"/>

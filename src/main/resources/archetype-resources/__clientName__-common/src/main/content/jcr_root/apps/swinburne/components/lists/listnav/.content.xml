@@ -7,5 +7,5 @@
     jcr:title="List Nav"
     cq:icon="viewList"
     jcr:description="used as Pagination in a page"
-          componentGroup="Swinburne - Lists"
-          sling:resourceSuperType="aemdesign/components/lists/listnav"/>
+	componentGroup="Swinburne - Lists"
+	sling:resourceSuperType="aemdesign/components/lists/listnav"/>

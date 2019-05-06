@@ -7,6 +7,6 @@
     jcr:description="Image Component"
     jcr:title="Image"
     cq:icon="image"
-          componentGroup="Swinburne - Media"
-          sling:resourceSuperType="aemdesign/components/media/image"/>
+	componentGroup="Swinburne - Media"
+	sling:resourceSuperType="aemdesign/components/media/image"/>
 

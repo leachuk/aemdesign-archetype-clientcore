@@ -7,5 +7,5 @@
     jcr:primaryType="cq:Component"
     jcr:title="Nav Bar"
     cq:icon="linkNav"
-          componentGroup="Swinburne - Layout"
-          sling:resourceSuperType="aemdesign/components/layout/navbar"/>
+	componentGroup="Swinburne - Layout"
+	sling:resourceSuperType="aemdesign/components/layout/navbar"/>

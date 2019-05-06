@@ -6,5 +6,5 @@
     jcr:primaryType="cq:Component"
     jcr:title="Table"
     cq:icon="table"
-          componentGroup="Swinburne - Content"
-          sling:resourceSuperType="aemdesign/components/content/table"/>
+	componentGroup="Swinburne - Content"
+	sling:resourceSuperType="aemdesign/components/content/table"/>

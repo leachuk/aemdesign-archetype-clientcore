@@ -7,5 +7,5 @@
     jcr:primaryType="cq:Component"
     jcr:title="Page Author"
     cq:icon="textParagraph"
-          componentGroup="Swinburne - Content"
-          sling:resourceSuperType="aemdesign/components/content/pageauthor"/>
+	componentGroup="Swinburne - Content"
+	sling:resourceSuperType="aemdesign/components/content/pageauthor"/>

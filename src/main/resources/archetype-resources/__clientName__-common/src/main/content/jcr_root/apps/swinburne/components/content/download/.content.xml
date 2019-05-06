@@ -6,5 +6,5 @@
     jcr:primaryType="cq:Component"
     jcr:title="File Download Link"
     cq:icon="download"
-      componentGroup="Swinburne - Content"
-      sling:resourceSuperType="aemdesign/components/content/download"/>
+	componentGroup="Swinburne - Content"
+	sling:resourceSuperType="aemdesign/components/content/download"/>

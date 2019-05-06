@@ -7,5 +7,5 @@
     jcr:primaryType="cq:Component"
     jcr:title="Rich Text"
     cq:icon="textParagraph"
-          componentGroup="Swinburne - Content"
-          sling:resourceSuperType="aemdesign/components/content/text"/>
+	componentGroup="Swinburne - Content"
+	sling:resourceSuperType="aemdesign/components/content/text"/>

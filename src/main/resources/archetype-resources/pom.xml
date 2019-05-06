@@ -49,11 +49,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<package.group>swinburne</package.group>
 		<package.groupTitle>Swinburne</package.groupTitle>
-		<package.createdBy>devops@aem.design</package.createdBy>
 		<package.builtWith>maven</package.builtWith>
 		<package.testedWith>AEM6.4</package.testedWith>
 		<package.providerName>Swinburne</package.providerName>
-		<package.providerUrl>http://aem.design</package.providerUrl>
 		<package.appFolder>swinburne</package.appFolder>
 		<package.contentFolder>swinburne</package.contentFolder>
 		<package.confFolder>swinburne</package.confFolder>

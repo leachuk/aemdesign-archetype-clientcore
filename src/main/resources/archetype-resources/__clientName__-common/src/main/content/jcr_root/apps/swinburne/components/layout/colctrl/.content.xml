@@ -7,5 +7,5 @@
     jcr:title="Columns"
     cq:icon="columnSettings"
     allowedParents="[*/parsys]"
-          componentGroup="Swinburne - Layout"
-          sling:resourceSuperType="aemdesign/components/layout/colctrl"/>
+	componentGroup="Swinburne - Layout"
+	sling:resourceSuperType="aemdesign/components/layout/colctrl"/>

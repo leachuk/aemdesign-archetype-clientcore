@@ -7,5 +7,5 @@
     jcr:title="Page List"
     cq:icon="viewList"
     allowedParents="[*/parsys]"
-          componentGroup="Swinburne - Lists"
-          sling:resourceSuperType="aemdesign/components/lists/pagelist"/>
+	componentGroup="Swinburne - Lists"
+	sling:resourceSuperType="aemdesign/components/lists/pagelist"/>

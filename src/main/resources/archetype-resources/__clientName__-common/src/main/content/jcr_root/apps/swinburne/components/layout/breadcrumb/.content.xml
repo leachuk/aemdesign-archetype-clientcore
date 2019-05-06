@@ -7,5 +7,5 @@
     jcr:primaryType="cq:Component"
     jcr:title="Breadcrumb"
     cq:icon="menu"
-          componentGroup="Swinburne - Layout"
-          sling:resourceSuperType="aemdesign/components/layout/breadcrumb"/>
+	componentGroup="Swinburne - Layout"
+	sling:resourceSuperType="aemdesign/components/layout/breadcrumb"/>

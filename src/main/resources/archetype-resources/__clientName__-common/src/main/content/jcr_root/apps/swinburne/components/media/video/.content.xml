@@ -6,6 +6,6 @@
     jcr:primaryType="cq:Component"
     jcr:description="Video component"
     jcr:title="Video"
-          componentGroup="Swinburne - Media"
-          sling:resourceSuperType="aemdesign/components/media/video"/>
+	componentGroup="Swinburne - Media"
+	sling:resourceSuperType="aemdesign/components/media/video"/>
 

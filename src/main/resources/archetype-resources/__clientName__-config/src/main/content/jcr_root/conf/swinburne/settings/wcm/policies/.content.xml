@@ -71,7 +71,7 @@
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Swinburne Structure"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[group:Swinburne - Content,group:Swinburne - Media,group:AEM.Design - Details,group:AEM.Design - Layout,group:AEM.Design - Forms,group:AEM.Design - Lists,group:AEM.Design - Widgets,/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/designimporter/components/importerEx,/libs/dam/cfm/components/contentfragment,/libs/fd/af/components/aemform]"
+                        components="[group:Swinburne - Content,group:Swinburne - Media,/libs/cq/experience-fragments/editor/components/experiencefragment,/libs/wcm/designimporter/components/importerEx,/libs/dam/cfm/components/contentfragment,/libs/fd/af/components/aemform]"
                         policyResourceType="swinburne/components/layout/container">
                         <cq:authoring jcr:primaryType="nt:unstructured">
                             <assetToComponentMapping jcr:primaryType="nt:unstructured">
