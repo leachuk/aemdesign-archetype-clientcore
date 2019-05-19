@@ -20,7 +20,7 @@
     <!-- ====================================================================== -->
 
     <groupId>${package}</groupId>
-    <artifactId>${artifactId}-services</artifactId>
+    <artifactId>${clientName}-core-services</artifactId>
     <packaging>bundle</packaging>
     <name>${clientName} :: core :: aem-services</name>
     <description>${clientName} AEM Service - OSGI Services</description>

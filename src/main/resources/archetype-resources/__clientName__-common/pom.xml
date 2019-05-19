@@ -15,7 +15,7 @@
     <!-- P R O J E C T D E S C R I P T I O N -->
     <!-- ====================================================================== -->
     <groupId>${groupId}</groupId>
-    <artifactId>${artifactId}</artifactId>
+    <artifactId>${clientName}-core-common</artifactId>
     <packaging>content-package</packaging>
     <name>${clientName} :: core :: aem-common</name>
     <description>Package with all common components</description>

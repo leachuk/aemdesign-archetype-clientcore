@@ -16,7 +16,7 @@
     <!-- ====================================================================== -->
 
     <groupId>${groupId}</groupId>
-    <artifactId>${artifactId}</artifactId>
+    <artifactId>${clientName}-core-testing</artifactId>
     <packaging>jar</packaging>
     <version>${version}</version>
     <name>${clientName} :: core :: testing</name>
