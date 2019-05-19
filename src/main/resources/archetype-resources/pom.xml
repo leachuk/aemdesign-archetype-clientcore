@@ -10,8 +10,8 @@
 	<version>${version}</version>
 	<packaging>pom</packaging>
 
-	<name>swinburne :: swinburne :: core</name>
-	<description>Maven Multimodule project for Swinburne AEM Core Parent Project.</description>
+	<name>${clientName} :: core</name>
+	<description>Maven Multimodule project for ${clientName} AEM Core Parent Project.</description>
 
 	<distributionManagement>
 		<snapshotRepository>
@@ -47,17 +47,17 @@
 		<publish.crx.password>admin</publish.crx.password>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<package.group>swinburne</package.group>
-		<package.groupTitle>Swinburne</package.groupTitle>
+		<package.group>${clientName}</package.group>
+		<package.groupTitle>${clientName}</package.groupTitle>
 		<package.builtWith>maven</package.builtWith>
 		<package.testedWith>AEM6.4</package.testedWith>
-		<package.providerName>Swinburne</package.providerName>
-		<package.appFolder>swinburne</package.appFolder>
-		<package.contentFolder>swinburne</package.contentFolder>
-		<package.confFolder>swinburne</package.confFolder>
-		<package.clientLibsFolder>swinburne</package.clientLibsFolder>
+		<package.providerName>${clientName}</package.providerName>
+		<package.appFolder>${clientName}</package.appFolder>
+		<package.contentFolder>${clientName}</package.contentFolder>
+		<package.confFolder>${clientName}</package.confFolder>
+		<package.clientLibsFolder>${clientName}</package.clientLibsFolder>
 		<package.npmCommand>aem:build</package.npmCommand>
-		<package.classNamespace>edu.au.swinburne</package.classNamespace>
+		<package.classNamespace>${groupId}</package.classNamespace>
 		<package.uploadProtocol>http</package.uploadProtocol>
 		<aem.verison>6.4</aem.verison>
 		<buildNumber>0</buildNumber>
@@ -115,7 +115,6 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- START swinburne-core-testing dependencies-->
 			<dependency>
 				<groupId>com.athaydes</groupId>
 				<artifactId>spock-reports</artifactId>
@@ -235,7 +234,6 @@
 				<artifactId>slf4j-log4j12</artifactId>
 				<version>1.7.25</version>
 			</dependency>
-			<!-- END swinburne-core-testing dependencies-->
 			<!-- OSGi Dependencies -->
 			<dependency>
 				<groupId>org.osgi</groupId>
@@ -510,11 +508,11 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<modules>
-				<module>swinburne-core-common</module>
-				<module>swinburne-core-config</module>
-				<module>swinburne-core-deploy</module>
-				<module>swinburne-core-services</module>
-				<module>swinburne-core-showcase</module>
+				<module>${clientName}-core-common</module>
+				<module>${clientName}-core-config</module>
+				<module>${clientName}-core-deploy</module>
+				<module>${clientName}-core-services</module>
+				<module>${clientName}-core-showcase</module>
 			</modules>
 		</profile>
 	</profiles>

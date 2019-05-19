@@ -17,7 +17,7 @@
     <groupId>${groupId}</groupId>
     <artifactId>${artifactId}</artifactId>
     <packaging>content-package</packaging>
-    <name>swinburne :: swinburne :: core :: aem-common</name>
+    <name>${clientName} :: core :: aem-common</name>
     <description>Package with all common components</description>
     <version>${version}</version>
 
@@ -221,8 +221,8 @@
                     <embeddeds>
                         <embedded>
                         <groupId>${project.parent.groupId}</groupId>
-                        <artifactId>swinburne-core-services</artifactId>
-                        <target>/apps/swinburne/install</target>
+                        <artifactId>${clientName}-core-services</artifactId>
+                        <target>/apps/${clientName}/install</target>
                         </embedded>
                     </embeddeds>
 

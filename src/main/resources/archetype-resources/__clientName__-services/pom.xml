@@ -22,8 +22,8 @@
     <groupId>${package}</groupId>
     <artifactId>${artifactId}-services</artifactId>
     <packaging>bundle</packaging>
-    <name>swinburne :: swinburne :: core :: aem-services</name>
-    <description>Swinburne AEM Service - OSGI Services</description>
+    <name>${clientName} :: core :: aem-services</name>
+    <description>${clientName} AEM Service - OSGI Services</description>
     <version>${version}</version>
 
     <dependencies>
@@ -304,10 +304,10 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>edu.au.swinburne</Bundle-SymbolicName>
+                        <Bundle-SymbolicName>${groupId}</Bundle-SymbolicName>
                         <Embed-Dependency>gson,javax.inject,jsoup</Embed-Dependency>
-                        <Sling-Model-Packages>edu.au.swinburne.models</Sling-Model-Packages>
-                        <Export-Package>edu.au.swinburne.*,
+                        <Sling-Model-Packages>${groupId}.models</Sling-Model-Packages>
+                        <Export-Package>${groupId}.*,
                             org.jsoup,
                             org.jsoup.examples,
                             org.jsoup.helper,

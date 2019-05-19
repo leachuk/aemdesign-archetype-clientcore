@@ -14,7 +14,7 @@ You can quickly check the generated project structure after running `mvn clean i
 Run the archetype to generate a new core project.
 
 Custom properties
- * clientName = Provides the string used throughout the project to set folder and path names specific to the clients project
+ * `clientName` = Provides the string used throughout the project to set folder and path names specific to the clients project
  
 ```bash
 mvn archetype:generate \

@@ -19,7 +19,7 @@
     <artifactId>${artifactId}</artifactId>
     <packaging>jar</packaging>
     <version>${version}</version>
-    <name>swinburne :: swinburne :: core :: testing</name>
+    <name>${clientName} :: core :: testing</name>
     <description>Tests for AEM and Prototype</description>
 
     <properties>
