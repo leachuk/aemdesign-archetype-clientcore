@@ -7,12 +7,6 @@
   </requiredProperties>
   <fileSets>
     <fileSet filtered="true" encoding="UTF-8">
-      <directory>__clientName__-core-services</directory>
-      <includes>
-        <include>**/*.xml</include>
-      </includes>
-    </fileSet>
-    <fileSet filtered="true" encoding="UTF-8">
       <directory>__clientName__-server-config</directory>
       <includes>
         <include>**/*.xml</include>
@@ -24,11 +18,11 @@
         <include>**/*.java</include>
       </includes>
     </fileSet>
-    <fileSet encoding="UTF-8">
+    <fileSet filtered="true" encoding="UTF-8">
       <directory>__clientName__-core-services</directory>
       <includes>
-        <include>**/*.</include>
         <include>**/*.md</include>
+        <include>**/*.xml</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">
