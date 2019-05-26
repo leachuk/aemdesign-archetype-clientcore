@@ -1,0 +1,52 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<template data-sly-template.variant="${symbol_dollar}{@ componentProperties}">
+    <!--/* Has a background */-->
+    <sly data-sly-test.hasBackground="${symbol_dollar}{componentProperties.pageBackgroundImage}">
+        <div data-sly-attribute="${symbol_dollar}{componentProperties.attr.data @ context = 'unsafe'}" style="background-image: url(${symbol_dollar}{componentProperties.pageBackgroundImage})" />
+    </sly>
+
+    <!--/* Doesn't have a background */-->
+    <sly data-sly-test="${symbol_dollar}{!hasBackground}">
+        <div data-sly-attribute="${symbol_dollar}{componentProperties.attr.data @ context = 'unsafe'}" />
+    </sly>
+        <div class="container">
+            <sly data-sly-use.header="news-details.header.html"
+                 data-sly-call="${symbol_dollar}{header.variant @ componentProperties=componentProperties}"></sly>
+            <header>
+                <div class="published"
+                     data-sly-test="${symbol_dollar}{componentProperties.showPageDate}">${symbol_dollar}{componentProperties.newsDateStatusText @ context='unsafe'}</div>
+
+                <div class="tags" data-sly-test="${symbol_dollar}{componentProperties.category}">
+                    <sly data-sly-list.tag="${symbol_dollar}{componentProperties.category}" data-sly-unwrap>
+                        <sly data-sly-test="${symbol_dollar}{componentProperties.category[tag]}">
+                            <span class="tag badge badge-default" data-value="${symbol_dollar}{componentProperties.category[tag].value}">${symbol_dollar}{componentProperties.category[tag].title}</span>
+                        </sly>
+                    </sly>
+                </div>
+
+                <title class="title"
+                       data-sly-test="${symbol_dollar}{!componentProperties.hideTitle}"
+                       data-sly-element="${symbol_dollar}{componentProperties.titleType}"
+                       data-sly-attribute.id="${symbol_dollar}{componentProperties.ariaLabelledBy}">${symbol_dollar}{componentProperties.titleFormatted @ context = 'unsafe'}</title>
+            </header>
+
+            <div class="body">
+                <img src="${symbol_dollar}{componentProperties.pageThumbnailImage}"
+                     data-sly-attribute="${symbol_dollar}{componentProperties.badgeImageAttr @ context = 'unsafe'}"
+                     alt="${symbol_dollar}{componentProperties.title}">
+
+                <sly data-sly-test="${symbol_dollar}{componentProperties.showBreadcrumb}">
+                    <sly data-sly-resource="${symbol_dollar}{'./breadcrumb' @ resourceType='${clientName}-core/components/layout/breadcrumb', decorationTagName='div'}"></sly>
+                </sly>
+
+                <div class="description"
+                     data-sly-test="${symbol_dollar}{!componentProperties.hideDescription}">${symbol_dollar}{componentProperties.description @ context = 'unsafe'}</div>
+            </div>
+
+            <sly data-sly-use.footer="news-details.footer.html"
+                 data-sly-call="${symbol_dollar}{footer.variant @ componentProperties=componentProperties}"></sly>
+        </div>
+    </div>
+</template>

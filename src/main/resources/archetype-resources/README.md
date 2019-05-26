@@ -1,5 +1,5 @@
 
-#Swinburne AEM Parent Project
+#${clientName}-core AEM Parent Project
 
 
 
@@ -24,7 +24,7 @@ All branches must be named as follows:
 To generate keys for accessing Git use this command
 
 ```bash
-KEYNAME=swinburne; ssh-keygen -t rsa -b 4096 -C "${KEYNAME}" -N '' -f "${KEYNAME}"
+KEYNAME=${clientName}-core; ssh-keygen -t rsa -b 4096 -C "${KEYNAME}" -N '' -f "${KEYNAME}"
 ```
 
 
@@ -33,7 +33,7 @@ KEYNAME=swinburne; ssh-keygen -t rsa -b 4096 -C "${KEYNAME}" -N '' -f "${KEYNAME
 Use the deploy scripts or use the following command
 
 ```bash
-mvn -Dvault.useProxy=false -DskipTests clean install -P autoInstallBundle,autoInstallPackage -pl swinburne-core-common,swinburne-core-content,swinburne-core-showcase  -Dcrx.host=localhost
+mvn -Dvault.useProxy=false -DskipTests clean install -P autoInstallBundle,autoInstallPackage -pl ${clientName}-core-core-common,${clientName}-core-core-content,${clientName}-core-core-showcase  -Dcrx.host=localhost
 ```
 
 
@@ -62,8 +62,8 @@ mvn -Dvault.useProxy=false -DskipTests -e -U -P localrepos,deploymentpackage,ins
 
 Please follow this process when adding new component to project
 
-1. Copy Component Showcase pages to similar location and replace all references of ```sling:resourceType="aemdesign/components/{group}/{component}"``` with ```sling:resourceType="swinburne/components/{group}/{component}"```
-2. Copy Component Tests to similar location and update each test case to point to Swinburne showcase updating this ```String pathSite = "content/swinburne-showcase"``` to ```String pathSite = "content/swinburne-showcase"```
+1. Copy Component Showcase pages to similar location and replace all references of ```sling:resourceType="aemdesign/components/{group}/{component}"``` with ```sling:resourceType="${clientName}-core/components/{group}/{component}"```
+2. Copy Component Tests to similar location and update each test case to point to ${clientName}-core showcase updating this ```String pathSite = "content/${clientName}-core-showcase"``` to ```String pathSite = "content/${clientName}-core-showcase"```
 3. Run the tests.
 
 NOTE: if you do not do this you will most likely have your PR declined.

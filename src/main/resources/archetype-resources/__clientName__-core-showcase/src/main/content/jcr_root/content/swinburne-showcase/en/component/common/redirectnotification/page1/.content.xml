@@ -1,0 +1,48 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:tags="[${clientName}-core:content-type/page]"
+        cq:template="/conf/${clientName}-core/settings/wcm/templates/twocolumn"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Redirect Target"
+        jcr:uuid="8f3c6997-e1c8-44f9-9904-ac142a7573a9"
+        sling:resourceType="${clientName}-core/components/template/base">
+        <article jcr:primaryType="nt:unstructured">
+            <par
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="${clientName}-core/components/layout/container">
+                <page-details
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="${clientName}-core/components/details/page-details"
+                    componentId="page-details_G5YMS73R8"/>
+                <contentblock
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="${clientName}-core/components/layout/contentblock"
+                    componentId="default_content"
+                    hideTitle="false"
+                    hideTitleSeparator="true"
+                    title="Default Style">
+                    <par
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="${clientName}-core/components/layout/container">
+                        <text
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="${clientName}-core/components/content/text"
+                            componentId="contenttabs-page1-text"
+                            text="&lt;h1>Redirect Target&lt;/h1>"
+                            textIsRich="true"/>
+                    </par>
+                </contentblock>
+            </par>
+        </article>
+        <image
+            jcr:primaryType="nt:unstructured"
+            imageRotate="0"/>
+    </jcr:content>
+</jcr:root>

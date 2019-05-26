@@ -6,6 +6,6 @@
  */
 @Version("1.0.0")
 
-package edu.au.swinburne;
+package edu.au.${clientName}-core;
 
 import org.osgi.annotation.versioning.Version;

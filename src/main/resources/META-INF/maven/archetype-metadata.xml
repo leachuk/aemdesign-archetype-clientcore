@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archetype-descriptor xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd" name="swinburne-core"
+<archetype-descriptor xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd" name="${clientName}-core-core"
     xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <requiredProperties>
     <requiredProperty key="clientName"/>
   </requiredProperties>
   <fileSets>
-    <fileSet filtered="true" encoding="UTF-8">
-      <directory>__clientName__-server-config</directory>
-      <includes>
-        <include>**/*.xml</include>
-      </includes>
-    </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
       <directory>__clientName__-core-services/src</directory>
       <includes>
@@ -23,21 +17,6 @@
       <includes>
         <include>**/*.md</include>
         <include>**/*.xml</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>__clientName__-server-config</directory>
-      <includes>
-        <include>**/*.md</include>
-      </includes>
-    </fileSet>
-    <fileSet encoding="UTF-8">
-      <directory>__clientName__-server-config/src</directory>
-      <includes>
-        <include>**/*.</include>
-        <include>**/*.old</include>
-        <include>**/*.conf</include>
-        <include>**/*.any</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">
@@ -64,7 +43,7 @@
     </fileSet>
   </fileSets>
   <modules>
-    <module id="${clientName}-common" dir="__clientName__-common" name="${clientName}-common">
+    <module id="${clientName}-core-common" dir="__clientName__-core-common" name="${clientName}-core-common">
       <fileSets>
         <fileSet filtered="true" encoding="UTF-8">
           <directory>src/main/content</directory>
@@ -97,7 +76,7 @@
         </fileSet>
       </fileSets>
     </module>
-    <module id="${clientName}-config" dir="__clientName__-config" name="${clientName}-config">
+    <module id="${clientName}-core-config" dir="__clientName__-core-config" name="${clientName}-core-config">
       <fileSets>
         <fileSet filtered="true" encoding="UTF-8">
           <directory>src/main/content</directory>
@@ -109,7 +88,6 @@
         <fileSet encoding="UTF-8">
           <directory>src/main/content</directory>
           <includes>
-            <include>**/*.psd</include>
             <include>**/*.cnd</include>
             <include>**/*.png</include>
           </includes>
@@ -124,7 +102,7 @@
         </fileSet>
       </fileSets>
     </module>
-    <module id="${clientName}-showcase" dir="__clientName__-showcase" name="${clientName}-showcase">
+    <module id="${clientName}-core-showcase" dir="__clientName__-core-showcase" name="${clientName}-core-showcase">
       <fileSets>
         <fileSet filtered="true" encoding="UTF-8">
           <directory>src/main/content</directory>
@@ -155,7 +133,7 @@
         </fileSet>
       </fileSets>
     </module>
-    <module id="${clientName}-deploy" dir="__clientName__-deploy" name="${clientName}-deploy">
+    <module id="${clientName}-core-deploy" dir="__clientName__-core-deploy" name="${clientName}-core-deploy">
       <fileSets>
         <fileSet filtered="true" encoding="UTF-8">
           <directory>src/content</directory>
@@ -181,7 +159,7 @@
         </fileSet>
       </fileSets>
     </module>
-    <module id="${clientName}-testing" dir="__clientName__-testing" name="${clientName}-testing">
+    <module id="${clientName}-core-testing" dir="__clientName__-core-testing" name="${clientName}-core-testing">
       <fileSets>
         <fileSet filtered="true" encoding="UTF-8">
           <directory>src/test/groovy</directory>
@@ -202,19 +180,6 @@
             <include>**/*.ad</include>
             <include>**/*.md</include>
             <include>**/*.dmg</include>
-          </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-          <directory>drivers</directory>
-          <includes>
-            <include>**/*.</include>
-            <include>**/*.version</include>
-          </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-          <directory>drivers/operadriver-mac-64bit</directory>
-          <includes>
-            <include>**/*.</include>
           </includes>
         </fileSet>
         <fileSet filtered="true" encoding="UTF-8">

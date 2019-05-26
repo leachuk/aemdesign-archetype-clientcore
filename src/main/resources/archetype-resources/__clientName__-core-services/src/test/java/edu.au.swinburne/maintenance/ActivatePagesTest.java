@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package edu.au.swinburne.maintenance;
+package edu.au.${clientName}-core.maintenance;
 
 
 import com.google.common.collect.Maps;

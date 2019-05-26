@@ -87,8 +87,8 @@ devops___*
 .stats/*
 
 #ignore testing remote driver exec files and restuls
-swinburne-core-testing/remote-*
-swinburne-core-testing/local-*
+${clientName}-core-core-testing/remote-*
+${clientName}-core-core-testing/local-*
 
 #ignore bash things
 .bash_history

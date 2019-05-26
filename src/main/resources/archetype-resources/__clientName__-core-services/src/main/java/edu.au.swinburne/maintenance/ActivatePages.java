@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package edu.au.swinburne.maintenance;
+package edu.au.${clientName}-core.maintenance;
 
 import com.day.cq.replication.Replicator;
 import com.day.cq.replication.ReplicationOptions;
@@ -69,7 +69,7 @@ public final class ActivatePages implements JobExecutor {
                 description = "Enter resource paths"
         )
         String[] resource_paths() default
-                {"/content/swinburne-showcase", "/content/swinburne"};
+                {"/content/${clientName}-core-showcase", "/content/${clientName}-core"};
 
 
         /**

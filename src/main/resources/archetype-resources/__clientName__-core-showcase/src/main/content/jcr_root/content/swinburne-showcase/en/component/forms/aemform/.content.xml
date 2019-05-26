@@ -1,0 +1,51 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/${clientName}-core/settings/wcm/templates/twocolumn"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="AEM Form"
+        sling:resourceType="${clientName}-core/components/template/base">
+        <header
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="${clientName}-core/components/layout/header">
+            <par
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="${clientName}-core/components/layout/container"/>
+        </header>
+        <aside
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="${clientName}-core/components/layout/aside">
+            <par
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="${clientName}-core/components/layout/container"/>
+        </aside>
+        <article
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="${clientName}-core/components/layout/article">
+            <par
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="${clientName}-core/components/layout/container">
+                <aemform
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="fd/af/components/aemform"
+                    formRef="/content/dam/formsanddocuments/${clientName}-core-showcase/jie"
+                    formType="adaptiveForm"
+                    submitType="inline"
+                    textIsRich="true"
+                    thankyouConfig="message"
+                    useiframe="true"/>
+            </par>
+        </article>
+        <footer
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="${clientName}-core/components/layout/footer">
+            <par
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="${clientName}-core/components/layout/container"/>
+        </footer>
+    </jcr:content>
+</jcr:root>

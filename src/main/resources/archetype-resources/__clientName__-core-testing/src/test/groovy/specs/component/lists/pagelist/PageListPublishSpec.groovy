@@ -1,0 +1,322 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package specs.component.lists.pagelist
+
+
+import spock.lang.Ignore
+import spock.lang.Stepwise
+import spock.lang.Unroll
+import support.ComponentSpec
+
+@Stepwise
+class PageListPublishSpec extends ComponentSpec {
+
+    String pathPage = "component/lists/page-list"
+    String pathSite = "content/${clientName}-core-showcase"
+    String language = "en"
+    String componentPath = "jcr:content/article/par/pagelist"
+
+    def setupSpec() {
+        loginAsAdmin()
+    }
+
+    @Unroll("Page List: Default variant using Default badge in ${symbol_pound}viewport.label")
+    def "Page List: Default variant using Default badge"() {
+
+        given: '>the page hierarchy is created as "Components" > "Lists" > "Page List"'
+        and: '>I am in the component showcase page'
+        and: '>the component is on the showcase page'
+        def selector = "${symbol_pound}pagelist1"
+        def selectorContainer = "${symbol_pound}contentblock1 .contents"
+
+        when: "I am on the component showcase page"
+        setWindowSize(viewport)
+        waitForAuthorPreviewPage()
+
+        then: "The component should be on the page"
+        def component = waitForComponent(selector)
+        takeScreenshot(${symbol_dollar}(selectorContainer).firstElement(), "The component should be on the page")
+
+        and: "Has five list items"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} li").size() == 5
+
+        and: "Has first item"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} li.first").text().trim() == "Page1"
+
+        and: "Has last item"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} li.last").text().trim() == "Page5"
+
+        and: "Has three plain items"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} li.item").size() == 3
+
+        where:
+        viewport << getViewPorts()
+    }
+
+    @Unroll("Page List: Default variant using Icon badge in ${symbol_pound}viewport.label")
+    def "Page List: Default variant using Icon badge"() {
+
+        given: '>the page hierarchy is created as "Components" > "Lists" > "Page List"'
+        and: '>I am in the component showcase page'
+        and: '>the component is on the showcase page'
+        def selector = "${symbol_pound}pagelist2"
+        def selectorContainer = "${symbol_pound}contentblock2 .contents"
+
+        when: "I am on the component showcase page"
+        setWindowSize(viewport)
+        waitForAuthorPreviewPage()
+
+        then: "The component should be on the page"
+        def component = waitForComponent(selector)
+        takeScreenshot(${symbol_dollar}(selectorContainer).firstElement(), "The component should be on the page")
+
+        and: "Has five list items"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} li").size() == 3
+
+        and: "Has icon as contents"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} li i").size() == 3
+
+        where:
+        viewport << getViewPorts()
+    }
+
+    @Unroll("Page List: Default variant using Image badge in ${symbol_pound}viewport.label")
+    def "Page List: Default variant using Image badge"() {
+
+        given: '>the page hierarchy is created as "Components" > "Lists" > "Page List"'
+        and: '>I am in the component showcase page'
+        and: '>the component is on the showcase page'
+        def selector = "${symbol_pound}pagelist3"
+        def selectorContainer = "${symbol_pound}contentblock3 .contents"
+
+        when: "I am on the component showcase page"
+        setWindowSize(viewport)
+        waitForAuthorPreviewPage()
+
+        then: "The component should be on the page"
+        def component = waitForComponent(selector)
+        takeScreenshot(${symbol_dollar}(selectorContainer).firstElement(), "The component should be on the page")
+
+        and: "Has five list items"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} li").size() == 5
+
+        and: "Has image as contents"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} li img").size() == 5
+
+        where:
+        viewport << getViewPorts()
+    }
+
+
+
+    @Unroll("Page List: Default variant using Horizontal badge in ${symbol_pound}viewport.label")
+    def "Page List: Default variant using Horizontal badge"() {
+
+        given: '>the page hierarchy is created as "Components" > "Lists" > "Page List"'
+        and: '>I am in the component showcase page'
+        and: '>the component is on the showcase page'
+        def selector = "${symbol_pound}pagelist5"
+        def selectorContainer = "${symbol_pound}contentblock5 .contents"
+
+        when: "I am on the component showcase page"
+        setWindowSize(viewport)
+        waitForAuthorPreviewPage()
+
+        then: "The component should be on the page"
+        def component = waitForComponent(selector)
+        takeScreenshot(${symbol_dollar}(selectorContainer).firstElement(), "The component should be on the page")
+
+        and: "Has five list items"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} li").size() == 3
+
+        and: "Has card as contents"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} li .card").size() == 3
+
+        where:
+        viewport << getViewPorts()
+    }
+
+
+    @Unroll("Page List: Default Empty in ${symbol_pound}viewport.label")
+    def "Page List: Default Empty"() {
+
+        given: '>the page hierarchy is created as "Components" > "Lists" > "Page List"'
+        and: '>I am in the component showcase page'
+        and: '>the component is on the showcase page'
+        def selector = "${symbol_pound}pagelist6"
+        def selectorContainer = "${symbol_pound}contentblock6 .contents"
+
+        when: "I am on the component showcase page"
+        setWindowSize(viewport)
+        waitForAuthorPreviewPage()
+
+        then: "The component should be on the page"
+        def component = waitForComponent(selector)
+        takeScreenshot(${symbol_dollar}(selectorContainer).firstElement(), "The component should be on the page")
+
+        and: "Has no content"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} .content > child").isEmpty() == true
+
+        where:
+        viewport << getViewPorts()
+    }
+
+
+    @Unroll("Badge: Card with Image, Title, Description and Action in ${symbol_pound}viewport.label")
+    def "Badge: Card with Image, Title, Description and Action"() {
+
+        given: '>the page hierarchy is created as "Components" > "Lists" > "Page List"'
+        and: '>I am in the component showcase page'
+        and: '>the component is on the showcase page'
+        def selector = "${symbol_pound}pagelist29"
+        def selectorContainer = "${symbol_pound}contentblock29 .contents"
+
+        when: "I am on the component showcase page"
+        setWindowSize(viewport)
+        waitForAuthorPreviewPage()
+
+        then: "The component should be on the page"
+        def component = waitForComponent(selector)
+        takeScreenshot(${symbol_dollar}(selectorContainer).firstElement(), "The component should be on the page")
+
+        and: "Has two list items"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} ul.list > li").size() == 2
+
+        and: "Has image in first item"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} > div > ul > li.first > div > div.card-img-top > img").attr("alt") == "Page1"
+
+        and: "Has title in first item"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} > div > ul > li.first > div > div.card-body > h3").text() == "Page1"
+
+        and: "Has description in first item"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} > div > ul > li.first > div > div.card-body > div.card-text").text() == "Page with Licensed Page Image, with non-Licensed Secondary Image and with Background non-Licensed Image"
+
+        and: "Has call to action in first item"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} > div > ul > li.first > div > div.card-body > div > a").text().toUpperCase() == "BUTTON TEXT"
+
+        where:
+        viewport << getViewPorts()
+    }
+
+    @Unroll("Page List: Default variant using Card badge with List Split every 2 in ${symbol_pound}viewport.label")
+    def "Page List: Default variant using Card badge with List Split every 2"() {
+
+        given: '>the page hierarchy is created as "Components" > "Lists" > "Page List"'
+        and: '>I am in the component showcase page'
+        and: '>the component is on the showcase page'
+        def selector = "${symbol_pound}pagelist30"
+        def selectorContainer = "${symbol_pound}contentblock30 .contents"
+
+        when: "I am on the component showcase page"
+        setWindowSize(viewport)
+        waitForAuthorPreviewPage()
+
+        then: "The component should be on the page"
+        def component = waitForComponent(selector)
+        takeScreenshot(${symbol_dollar}(selectorContainer).firstElement(), "The component should be on the page")
+
+        and: "Has three lists"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} ul").size() == 3
+
+        and: "Has five list items"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} li").size() == 5
+
+        and: "First list has two items"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} ul:nth-child(1)").find("li").size() == 2
+
+        and: "Second list has two items"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} ul:nth-child(2)").find("li").size() == 2
+
+        and: "Third list has one items"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} ul:nth-child(3)").find("li").size() == 1
+
+        where:
+        viewport << getViewPorts()
+    }
+
+
+
+	@Unroll("Page List: Card Action with Analytics ${symbol_pound}viewport.label")
+	def "Page List: Card Action with Analytics"() {
+
+		given: '>the page hierarchy is created as "Components" > "Lists" > "Page List"'
+		and: '>I am in the component showcase page'
+		and: '>the component is on the showcase page'
+		def selector = "${symbol_pound}pagelist33"
+		def selectorContainer = "${symbol_pound}contentblock33 .contents"
+
+		when: "I am on the component showcase page"
+		setWindowSize(viewport)
+		waitForAuthorPreviewPage()
+
+		then: "The component should be on the page"
+		def component = waitForComponent(selector)
+		takeScreenshot(${symbol_dollar}(selectorContainer).firstElement(), "The component should be on the page")
+
+		and: "First page link should have attribute: data-layer-track"
+		assert ${symbol_dollar}("${symbol_dollar}{selector} .card-link").getAt(0).attr("data-layer-track").equals("true")
+
+		and: "First page link should have attribute: data-layer-label"
+		assert ${symbol_dollar}("${symbol_dollar}{selector} .card-link").getAt(0).attr("data-layer-label").equals("link")
+
+		and: "First page link should have attribute: data-layer-location"
+		assert ${symbol_dollar}("${symbol_dollar}{selector} .card-link").getAt(0).attr("data-layer-location").equals("pagelist")
+
+		where:
+		viewport << getViewPorts()
+	}
+
+
+    @Unroll("Page List: Pages with no Details in ${symbol_pound}viewport.label")
+    def "Page List: Pages with no Details"() {
+
+        given: '>the page hierarchy is created as "Components" > "Lists" > "List"'
+        and: '>I am in the component showcase page'
+        and: '>the component is on the showcase page'
+        def selector = "${symbol_pound}pagelist38"
+
+        when: "I am on the component showcase page"
+        setWindowSize(viewport)
+        waitForAuthorPreviewPage()
+
+        then: "The component should be on the page"
+        def component = waitForComponent(selector)
+        takeScreenshot(${symbol_dollar}(selector).firstElement(), "The component should be on the page")
+
+        and: "Has five items of page missing details"
+        assert ${symbol_dollar}("${symbol_dollar}{selector} .page-missing-details").size() == 5
+
+        where:
+        viewport << getViewPorts()
+    }
+
+	@Unroll("Page List: Card Action with default Analytics ${symbol_pound}viewport.label")
+	def "Page List: Card Action with default Analytics"() {
+
+		given: '>the page hierarchy is created as "Components" > "Lists" > "Page List"'
+		and: '>I am in the component showcase page'
+		and: '>the component is on the showcase page'
+		def selector = "${symbol_pound}pagelist39"
+		def selectorContainer = "${symbol_pound}contentblock39 .contents"
+
+		when: "I am on the component showcase page"
+		setWindowSize(viewport)
+		waitForAuthorPreviewPage()
+
+		then: "The component should be on the page"
+		def component = waitForComponent(selector)
+		takeScreenshot(${symbol_dollar}(selectorContainer).firstElement(), "The component should be on the page")
+
+		and: "First page link should have attribute: data-layer-track false - unauthored"
+		assert ${symbol_dollar}("${symbol_dollar}{selector}").getAt(0).attr("data-layer-track").equals("false")
+
+		and: "First page link should have attribute: data-layer-label"
+		assert ${symbol_dollar}("${symbol_dollar}{selector}").getAt(0).attr("data-layer-label").equals("pagelist_39")
+
+
+		where:
+		viewport << getViewPorts()
+	}
+
+}

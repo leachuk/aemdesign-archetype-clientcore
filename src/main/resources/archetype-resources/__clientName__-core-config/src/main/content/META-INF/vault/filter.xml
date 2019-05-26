@@ -1,0 +1,15 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+
+    <filter root="/apps/${clientName}-core/config"/>
+
+    <filter root="/etc/tenants/${clientName}-core"/>
+
+    <filter root="/var/"/>
+
+	<filter root="/conf/${clientName}-core"/>
+
+</workspaceFilter>
