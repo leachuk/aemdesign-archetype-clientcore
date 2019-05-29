@@ -305,17 +305,9 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${groupId}</Bundle-SymbolicName>
-                        <Embed-Dependency>gson,javax.inject,jsoup</Embed-Dependency>
+                        <Embed-Dependency></Embed-Dependency>
                         <Sling-Model-Packages>${groupId}.models</Sling-Model-Packages>
-                        <Export-Package>${groupId}.*,
-                            org.jsoup,
-                            org.jsoup.examples,
-                            org.jsoup.helper,
-                            org.jsoup.nodes,
-                            org.jsoup.parser,
-                            org.jsoup.safety,
-                            org.jsoup.select
-                        </Export-Package>
+                        <Export-Package>${groupId}.*</Export-Package>
                     </instructions>
                 </configuration>
             </plugin>
